@@ -1,7 +1,6 @@
 from torch import nn
 import torchvision
 from my_models.s3dg import S3D
-from my_models.resnet_3d import VideoSlowResNet
 from my_models.my_r2plus1d_18 import VideoResNet as VideoResNetR2plus1d
 
 
