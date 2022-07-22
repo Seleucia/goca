@@ -7,7 +7,7 @@ Guided Online Cluster Assignment for Self Supervised Video Representation Learni
 We propose a principled way to combine two views. Specifically, we propose a novel clustering strategy where we use the initial cluster
 assignment of each modality as prior to guide the final cluster assignment of the
 other modality. This idea will enforce similar cluster structures for both modalities, and the formed clusters will be semantically abstract and robust to noisy
-inputs coming from each individual modality.
+inputs coming from each individual modality. You can find implementation of this idea in [sinkhorn_withprior](https://github.com/Seleucia/goca/blob/main/helper/train_utils.py#L210)
 <img src="figs/architecture-1.jpg"  width="1584">
 ### Link: 
 
