@@ -57,7 +57,13 @@ We used code from [Selavi](https://github.com/facebookresearch/selavi), [SWaV](h
  * Please becareful with the open-cv implementation for optical flow. We observe that there can be significant differences at computed the optical flows.
    * We extract optical flow with at the image-size of 256
    * You should use same parameters to extract optical flow for all the datasets.
- * We did our best to follow comon evaluation strategies however there are differences in earlier works. For instance, CoCLR and VICC uses different learning rate-schedule during fine-tuning. Selavi uses different features for evalaution than others. Some models use batch-norm and some not.  
+ * We did our best to follow comon evaluation strategies however there are differences in earlier works. We mostly follow: [A Large-Scale Study on Unsupervised Spatiotemporal Representation Learning
+](https://arxiv.org/abs/2104.14558). We saw most of the works follow it, however we observe following differences: 
+    * For instance, CoCLR and VICC uses different learning rate-scheduler during fine-tuning.
+    * We observe differences in fine-tuning duration. 
+    * Selavi uses different features (extracted from different layer) for evalaution than others. 
+    * We also observe that number of projection layer changes significantly in earlier works.  
+    * We observe also significant differences in optimizers and learning-rate scheduler during pre-training. 
 ## Citation
 ```
 @inproceedings{gocaweakly,
