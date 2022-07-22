@@ -61,9 +61,10 @@ We used code from [Selavi](https://github.com/facebookresearch/selavi), [SWaV](h
 ](https://arxiv.org/abs/2104.14558). We saw most of the works follow it, however we observe following differences: 
     * For instance, CoCLR and VICC uses different learning rate-scheduler during fine-tuning.
     * We observe differences in fine-tuning duration. 
-    * Selavi uses different features (extracted from different layer) for evalaution than others. 
+    * Selavi uses different features (extracted from different layer with embedding size of 4096) for evalaution than others. In our experiment we use 2048 for all. We did not see significant difference with 4096. 
     * We also observe that number of projection layer changes significantly in earlier works.  
     * We observe also significant differences in optimizers and learning-rate scheduler during pre-training. 
+    
 ## Citation
 ```
 @inproceedings{gocaweakly,
