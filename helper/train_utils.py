@@ -211,20 +211,12 @@ def distributed_sinkhorn_withprior(dist,args,out,prior_P,type_of_modal=''):
     B = out.t().shape[1] * args.world_size  # number of samples to assign
     K = out.t().shape[0]  # how many prototypes
     if prior_P!=None:
-        # denominator = (1 / args.epsilon) + (1 / args.epsilon2)
-        # prior_withreg = -torch.log(prior_P/B) * (1 / args.epsilon2)
-        # out_tmp = (out + prior_withreg) / denominator
         denominator = (args.epsilon) + (args.epsilon2)
         prior_withreg = -torch.log(prior_P/B) * (args.epsilon2)
         out_tmp = (out + prior_withreg) / denominator
-        # if args.rank==0:
-        #     print(type_of_modal,(args.epsilon), (args.epsilon2),'prior_withreg> ', torch.max(prior_withreg),'prior_P> ', torch.max(prior_P),'out > ', torch.max(out),'out_tmp >', torch.max(out_tmp))
     else:
         out_tmp=out / args.epsilon
     Q = torch.exp(out_tmp).t()  # Q is K-by-B for consistency with notations from our paper
-    # Q = torch.exp(out / args.epsilon).t() # Q is K-by-B for consistency with notations from our paper
-    # B = Q.shape[1] * args.world_size # number of samples to assign
-    # K = Q.shape[0] # how many prototypes
 
     # make the matrix sums to 1
     sum_Q = torch.sum(Q)
