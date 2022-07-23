@@ -25,7 +25,7 @@ inputs coming from each individual modality. You can find implementation of this
 3. We use TVL1 algorithm to compute optical-flow.  We modified the [MemDPC Code](https://github.com/TengdaHan/MemDPC/blob/master/process_data/src/extract_ff.py) for efficient GPU utilization to compute optical flow.
     1. Run this script `python datasets/ds_prep/efficent_optical_flow_with_GPU.py`
     2. If you have more than one-GPU to dedicate to compute optical flow, you can run this script for your each GPU.
-    3. Unfortinatly, I couldn't find a way to batch-wise optical flow computation with open-CV. If you can manage it, please let me know.
+    3. Unfortunately, I couldn't find a way to batch-wise optical flow computation with open-CV. If you can manage it, please let me know.
   
 ### Pretrain Instruction
 
