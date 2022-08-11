@@ -71,7 +71,7 @@ We used code from [Selavi](https://github.com/facebookresearch/selavi), [SWaV](h
 ```
 @inproceedings{goca,
   title={GOCA: Guided Online Cluster Assignment for Self Supervised Video Representation Learning},
-  author={Huseyin Coskun and Alireza Zareian and Joshua L. Moore and Federico Tombari, and Chen Wang},
+  author={Coskun, Huseyin and Zareian, Alireza and Moore, Joshua L and Tombari, Federico and Wang, Chen},
   booktitle={ECCV},
   year={2022}
 }
