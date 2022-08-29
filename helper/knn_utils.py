@@ -24,7 +24,7 @@ def cosine_distance_torch(x1, x2=None, eps=1e-8):
     return 1 - torch.mm(x1, x2.t()) / (w1 * w2.t()).clamp(min=eps)
 
 
-def pythorc_cosine_eval(suppert_set,query_set,kmax):
+def pytorch_cosine_eval(suppert_set,query_set,kmax):
     output=cosine_distance_torch(suppert_set,query_set)
     knn_batch = output.permute(1, 0).topk(kmax, largest=False)
     return knn_batch[1].cpu().detach().numpy().tolist()
