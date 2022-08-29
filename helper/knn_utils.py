@@ -7,13 +7,6 @@ import numpy as np
 
 def pythorc_eval(suppert_set,query_set,kmax):
     knn_batch=torch.norm(suppert_set.unsqueeze(1)- query_set.unsqueeze(0),dim=2,p=2).permute(1,0).topk(kmax, largest=False)
-    #
-    # for bidx in range(len(query_set)):
-    #     dist = torch.norm(suppert_set - query_set[bidx], dim=1, p=None)
-    #     knn = dist.topk(kmax, largest=False)
-    #     print(knn_batch[1][bidx])
-    #     print(knn[1])
-    #     print('*'*100)
     return knn_batch[1].cpu().detach().numpy().tolist()
     # print('kNN dist: {}, index: {}'.format(knn.values, knn.indices))
 
